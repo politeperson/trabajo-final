@@ -1,0 +1,46 @@
+#include <iostream>
+#include <math.h>
+#include <stdlib.h>
+#include <SFML/Graphics.hpp>
+#include <SFML/Graphics/Color.hpp>
+#include <SFML/Graphics/RenderWindow.hpp>
+#include <SFML/System/Time.hpp>
+#include "app_view.h"
+#include "app_model.h"
+using namespace std;
+using namespace sf;
+class app_controller{
+ public://only functions i think or not?
+  void player_update_position(int n, RectangleShape &canon, CircleShape &player);
+  void move_player_right(RectangleShape &canon, CircleShape &player);
+  
+  void move_player_left(RectangleShape &canon, CircleShape &player);
+  
+  void move_player_left(RectangleShape &canon, CircleShape &player);
+  
+  void turn_right_canon(RectangleShape &canon);
+  
+  void turn_left_canon(RectangleShape &canon);
+
+  void close_aplication();
+
+
+};
+
+
+void app_controller::player_update_postition(int n, RectangleShape &canon, CircleShape &player){
+  switch (n){
+  case 1://move right
+    Player::move_right();
+    break;
+  case 2://move left
+    Player::move_left();
+    break;
+  case 3://turn left canon
+    Player::left_canon();
+    break;
+  case 4://turn right canon
+    Player::right_canon();
+    break;
+  }
+}

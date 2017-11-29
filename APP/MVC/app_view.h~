@@ -1,0 +1,75 @@
+#include <iostream>
+#include <math.h>
+#include <stdlib.h>
+#include <SFML/Graphics.hpp>
+#include <SFML/Graphics/Color.hpp>
+#include <SFML/Graphics/RenderWindow.hpp>
+#include <SFML/System/Time.hpp>
+#include "objects/player.h"
+#include "objects/bomb.h"
+#include "controller/app_controller.h"
+using namespace std;
+using namespace sf;
+
+
+class my_window {
+  RenderWindow win;
+  Event event;
+  int width,height;
+public:
+  my_window(int _width, int _height){
+    width = _width;
+    height = _height;
+  }
+  void close_aplication(){//important here i will delete all my objects
+    win.close();
+  }
+  void run_aplication(){
+    win.create(VideoMode(800, 600), "5!!!!!");
+    while(win.isOpen()){
+      while (win.pollEvent(event))
+        {
+	  // "close requested" event: we close the window
+	  if (event.type == Event::Closed){
+	    close_aplication();
+	  }
+    if(Keyboard::isKeyPressed(Keyboard::Escape)){
+      close.aplication();
+	  }
+	  if(Keyboard::isKeyPressed(Keyboard::Up)){
+	    left_canon();
+	  }
+	  if(Keyboard::isKeyPressed(Keyboard::Down)){
+	    right_canon();
+	  }
+	  if(Keyboard::isKeyPressed(Keyboard::Left)){
+	    move_left();
+	  }
+	  if(Keyboard::isKeyPressed(Keyboard::Right)){
+	    move_right();
+	  }
+	  if(Keyboard::isKeyPressed(Keyboard::Space)){
+	    	    
+	    
+	    if((Keyboard::isKeyReleased(Keyboard::Space)) or ){
+	      
+	    } 
+	  }
+	}
+      window.clear(Color(0,0,0));
+      window.draw(canon);
+      window.draw(Player);
+      window.display();
+    }
+  }
+};
+
+class app_view
+{
+public:
+  app_view();
+  ~app_view();
+  
+};
+   
+
